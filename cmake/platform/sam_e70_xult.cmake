@@ -7,8 +7,8 @@ set(FPRIME_PLATFORM "sam_e70_xult")
 set(CMAKE_SYSTEM_PROCESSOR cortex-m7)
 
 # Set the compiler flags
-set(CMAKE_C_FLAGS_INIT "-mprocessor=ATSAME70Q21B -D__SAME70Q21B__ -isystem ${XC32_DIR}/include -isystem ${CMAKE_CURRENT_LIST_DIR}/sam_e70_xult_src/same70b/include -isystem ${CMAKE_CURRENT_LIST_DIR}/sam_e70_xult_src/same70b/include_mcc -isystem ${CMAKE_CURRENT_LIST_DIR}/sam_e70_xult_src/same70b/xc32/include")
-set(CMAKE_EXE_LINKER_FLAGS_INIT "-specs=${CMAKE_CURRENT_LIST_DIR}/sam_e70_xult_src/same70b/xc32/ATSAME70Q21B/specs-ATSAME70Q21B -Wl,--defsym,_min_heap_size=0x2000")
+set(CMAKE_C_FLAGS_INIT "-mprocessor=ATSAME70Q21B -D__SAME70Q21B__ -isystem ${XC32_DIR}/include -isystem ${CMAKE_CURRENT_LIST_DIR}/../sam_e70_xult_src/same70b/include -isystem ${CMAKE_CURRENT_LIST_DIR}/../sam_e70_xult_src/same70b/include_mcc -isystem ${CMAKE_CURRENT_LIST_DIR}/../sam_e70_xult_src/same70b/xc32/include")
+set(CMAKE_EXE_LINKER_FLAGS_INIT "-specs=${CMAKE_CURRENT_LIST_DIR}/../sam_e70_xult_src/same70b/xc32/ATSAME70Q21B/specs-ATSAME70Q21B -Wl,--defsym,_min_heap_size=0x2000")
 
 # Prevent CMake from adding its own -mcpu and -mthumb flags
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS_INIT}" CACHE STRING "Initial C FLAGS" FORCE)

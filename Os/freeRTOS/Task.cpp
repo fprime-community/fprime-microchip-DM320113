@@ -2,7 +2,7 @@
 #include <Fw/Types/Assert.hpp>
 #include <stdlib.h>
 #include <string.h>
-#include <NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h> // Need to replace with cmsis equivalent
+// Need to replace with cmsis equivalent
 
 namespace Os {
 

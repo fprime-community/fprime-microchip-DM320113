@@ -16,8 +16,8 @@
 #include <Fw/Obj/ObjBase.hpp>
 #include <Fw/Types/Serializable.hpp>
 #include <Os/QueueString.hpp>
-#include <NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h>
-#include <NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h>
+// NEED TO ADD FreeRTOS source
+
 namespace Os {
     // forward declaration for registry
     class QueueRegistry;

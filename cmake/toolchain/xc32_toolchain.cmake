@@ -3,7 +3,7 @@
 set(CMAKE_SYSTEM_NAME "stm32")
 set(CMAKE_SYSTEM_PROCESSOR cortex-m7)
 # Specify that a thread package should be searched in the toolchain directory
-set(FPRIME_USE_BAREMETAL_SCHEDULER ON)
+# set(FPRIME_USE_BAREMETAL_SCHEDULER ON) 
 
 # Specify the cross compiler
 set(XC32_DIR /opt/microchip/xc32/v4.40)

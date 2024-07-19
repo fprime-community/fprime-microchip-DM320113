@@ -1,6 +1,7 @@
 #include <Os/Mutex.hpp>
 #include <Fw/Types/Assert.hpp>
-// NEED TO ADD FreeRTOS source
+#include <FreeRTOS.h>
+#include <semphr.h>
 
 namespace Os {
     

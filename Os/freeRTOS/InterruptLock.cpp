@@ -1,5 +1,6 @@
 #include <Os/InterruptLock.hpp>
-// Add FreeRTOS source path
+#include <FreeRTOS.h>
+#include <task.h>
 
 namespace Os {
     // Constructor: Initializes the key to 0

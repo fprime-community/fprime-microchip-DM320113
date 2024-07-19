@@ -1,5 +1,4 @@
-#include <Fw/Types/Assert.hpp>
-#include <Os/freeRTOS/Queue.hpp>
+#include "Queue.hpp"
 
 namespace Os {
 
@@ -86,7 +85,7 @@ namespace Os {
             return (block == QUEUE_NONBLOCKING) ? QUEUE_NO_MORE_MSGS : QUEUE_UNKNOWN_ERROR;
         }
 
-        actualSize = capacity; // Set actual size
+        actualSize = this->m_msgSize; // Set actual size
         return QUEUE_OK; // Return success
     }
 

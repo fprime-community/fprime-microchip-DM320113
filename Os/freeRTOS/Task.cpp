@@ -2,7 +2,8 @@
 #include <Fw/Types/Assert.hpp>
 #include <stdlib.h>
 #include <string.h>
-// Need to replace with cmsis equivalent
+#include <FreeRTOS.h>
+#include <task.h>
 
 namespace Os {
 

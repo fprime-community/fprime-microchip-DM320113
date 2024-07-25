@@ -1,6 +1,6 @@
 # F Prime Port for Microchip DM320113 Eval Board with FreeRTOS
 
-This repository contains an F Prime (F') port for the STMElectronics Microchip DM320113 demo board, utilizing FreeRTOS for real-time operating system capabilities. The project is cross-compiled using the `xc32` compiler.
+This repository contains an F Prime (F') port for Microchips DM320113 demo board, utilizing FreeRTOS for real-time operating system capabilities. The project is cross-compiled using the `xc32` compiler.
 
 ## Table of Contents
 - [Overview](#overview)

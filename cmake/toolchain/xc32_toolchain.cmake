@@ -10,9 +10,6 @@ set(XC32_DIR /opt/microchip/xc32/v4.40)
 set(CMAKE_C_COMPILER ${XC32_DIR}/bin/xc32-gcc)
 set(CMAKE_CXX_COMPILER ${XC32_DIR}/bin/xc32-g++)
 
-# Include the platform configuration
-# include("${CMAKE_CURRENT_LIST_DIR}/sam_e70_xult.cmake")
-
 # Path to root of toolchain package
 set(CMAKE_FIND_ROOT_PATH /opt/microchip/xc32/v4.40)
 

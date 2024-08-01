@@ -1,5 +1,6 @@
 #include <Os/TaskId.hpp>
-// NEED TO ADD FreeRTOS source
+#include <FreeRTOS.h>
+#include <task.h>
 
 namespace Os
 {

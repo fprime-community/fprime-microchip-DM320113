@@ -1,14 +1,3 @@
-/**
- * Queue.hpp:
- *
- * Queues are used internally to F prime in order to support the messaging between components. The
- * Queue class is used to abstract away from the standard OS-based queue, allowing F prime support
- * multiple OSes in a consistent way.
- *
- * Like most items in the OS package, the implementation is done in two parts. One part is the file
- * `QueueCommon.cpp`. It contains the shared code for queues regardless of the OS. The other is a
- * .cpp file containing the OS specific backends for defined functions. (i.e. Posix/Queue.cpp).
- */
 #ifndef _Queue_hpp_
 #define _Queue_hpp_
 
@@ -16,7 +5,8 @@
 #include <Fw/Obj/ObjBase.hpp>
 #include <Fw/Types/Serializable.hpp>
 #include <Os/QueueString.hpp>
-// NEED TO ADD FreeRTOS source
+#include <FreeRTOS.h>
+#include <queue.h>
 
 namespace Os {
     // forward declaration for registry
@@ -75,6 +65,8 @@ namespace Os {
             QueueStatus createInternal(const Fw::StringBase &name, NATIVE_INT_TYPE depth, NATIVE_INT_TYPE msgSize); //!<  create a message queue
             QueueHandle_t m_handle; //!<  handle for implementation specific queue
             QueueString m_name; //!< queue name
+            NATIVE_INT_TYPE m_msgSize; //!< message size
+
 #if FW_QUEUE_REGISTRATION
             static QueueRegistry* s_queueRegistry; //!< pointer to registry
 #endif

@@ -24,16 +24,6 @@ include_directories(SYSTEM "${CMAKE_CURRENT_LIST_DIR}/../../Os/freeRTOS")
 include_directories(SYSTEM "${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/Source/portable/GCC/SAM/CM7")
 include_directories(SYSTEM "${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/Source/portable/MemMang")
 
-# Optionally, include other FreeRTOS configuration headers if required
-# set(FREERTOS_CONFIG_DIR "${CMAKE_CURRENT_LIST_DIR}/FreeRTOSConfig")
-# if(NOT EXISTS "${FREERTOS_CONFIG_DIR}")
-#     message(FATAL_ERROR "FreeRTOS configuration directory not found at ${FREERTOS_CONFIG_DIR}.")
-# endif()
-# include_directories(SYSTEM "${FREERTOS_CONFIG_DIR}")
-
-# Add any additional platform-specific settings or libraries as needed
-# link_directories(${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/lib)
-
 # Add PlatformTypes.h
 include_directories(SYSTEM "${CMAKE_CURRENT_LIST_DIR}/types")
 

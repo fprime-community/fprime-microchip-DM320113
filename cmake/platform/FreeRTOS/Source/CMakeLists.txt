@@ -1,0 +1,11 @@
+add_library(freertos
+    ${CMAKE_CURRENT_LIST_DIR}/event_groups.c
+    ${CMAKE_CURRENT_LIST_DIR}/list.c
+    ${CMAKE_CURRENT_LIST_DIR}/portable/GCC/SAM/CM7/port.c
+    ${CMAKE_CURRENT_LIST_DIR}/portable/MemMang/heap_1.c
+    ${CMAKE_CURRENT_LIST_DIR}/stream_buffer.c
+    ${CMAKE_CURRENT_LIST_DIR}/croutine.c
+    ${CMAKE_CURRENT_LIST_DIR}/timers.c
+    ${CMAKE_CURRENT_LIST_DIR}/FreeRTOS_tasks.c
+    ${CMAKE_CURRENT_LIST_DIR}/queue.c
+)

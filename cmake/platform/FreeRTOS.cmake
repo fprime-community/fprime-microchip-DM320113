@@ -15,7 +15,7 @@ if(NOT EXISTS "${FREERTOS_INCLUDE_DIR}")
 endif()
 
 # Disable Text Logging
-set(FW_ENABLE_TEXT_LOGGING 0 CACHE BOOL "Disable text logging")
+# set(FW_ENABLE_TEXT_LOGGING 0 CACHE BOOL "Disable text logging")
 
 include_directories(SYSTEM "${FREERTOS_INCLUDE_DIR}")
 
@@ -24,21 +24,10 @@ include_directories(SYSTEM "${CMAKE_CURRENT_LIST_DIR}/../../Os/freeRTOS")
 include_directories(SYSTEM "${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/Source/portable/GCC/SAM/CM7")
 include_directories(SYSTEM "${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/Source/portable/MemMang")
 
+# Add any additional platform-specific settings or libraries as needed
+link_directories(${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/lib)
+
 # Add PlatformTypes.h
 include_directories(SYSTEM "${CMAKE_CURRENT_LIST_DIR}/types")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/Source")
 
-# Choose FreeRTOS specific implementations for Os/File and Os/Task
-# choose_fprime_implementation(Os/File Os/File/Stub)
-choose_fprime_implementation(Os/Task Os/freeRTOS/Task)
-
-# Remove default Queue.hpp and replace with FreeRTOS-specific Queue.hpp
-if (FPRIME_USE_FREERTOS_SCHEDULER)
-    foreach (ITER_ITEM IN LISTS SOURCE_FILES)
-        if (ITER_ITEM MATCHES "(InterruptLock|Mutex|Queue|Task|TaskId)\\.cpp$")
-            list(REMOVE_ITEM SOURCE_FILES "${ITER_ITEM}")
-        endif()
-        if (ITER_ITEM MATCHES "Queue\\.hpp$")
-            list(REMOVE_ITEM SOURCE_FILES "${ITER_ITEM}")
-        endif()
-    endforeach()
-endif()

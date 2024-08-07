@@ -8,18 +8,24 @@ if (NOT DEFINED FPRIME_USE_FREERTOS_SCHEDULER)
     # FIND_PACKAGE ( Threads REQUIRED )
 endif()
 
+# Define SKIP_FLOAT_IEEE_754_COMPLIANCE
+add_definitions(-DSKIP_FLOAT_IEEE_754_COMPLIANCE=1)
+
+# Text Logging OFF
+add_definitions(-DFW_ENABLE_TEXT_LOGGING=0)
+set(FPRIME_ENABLE_TEXT_LOGGERS OFF)
+
 # Specify a directory containing the "PlatformTypes.hpp" headers, as well as other system headers
 set(FREERTOS_INCLUDE_DIR "${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/Source/include")
 if(NOT EXISTS "${FREERTOS_INCLUDE_DIR}")
     message(FATAL_ERROR "FreeRTOS include directory not found at ${FREERTOS_INCLUDE_DIR}.")
 endif()
 
-# Disable Text Logging
-# set(FW_ENABLE_TEXT_LOGGING 0 CACHE BOOL "Disable text logging")
+choose_fprime_implementation(Os/File Os/File/Stub)
 
 include_directories(SYSTEM "${FREERTOS_INCLUDE_DIR}")
 
-# Test
+# Build FreeRTOS source
 include_directories(SYSTEM "${CMAKE_CURRENT_LIST_DIR}/../../Os/freeRTOS")
 include_directories(SYSTEM "${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/Source/portable/GCC/SAM/CM7")
 include_directories(SYSTEM "${CMAKE_CURRENT_LIST_DIR}/FreeRTOS/Source/portable/MemMang")

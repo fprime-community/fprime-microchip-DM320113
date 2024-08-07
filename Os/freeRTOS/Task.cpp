@@ -12,7 +12,7 @@ namespace Os {
     }
 
     // Start method: Creates and starts a FreeRTOS task
-    Task::TaskStatus Task::start(const Fw::StringBase &name, NATIVE_INT_TYPE identifier, NATIVE_INT_TYPE priority, NATIVE_INT_TYPE stackSize, taskRoutine routine, void* arg, NATIVE_INT_TYPE cpuAffinity) {
+    Task::TaskStatus Task::start(const Fw::StringBase &name, taskRoutine routine, void* arg, NATIVE_UINT_TYPE priority, NATIVE_UINT_TYPE stackSize,  NATIVE_UINT_TYPE cpuAffinity, NATIVE_UINT_TYPE identifier) {
         TaskHandle_t xHandle; // FreeRTOS task handle
         this->m_name = "TP_"; // Prefix task name with "TP_"
         this->m_name += name; // Append the given name
